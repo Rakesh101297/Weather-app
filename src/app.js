@@ -17,7 +17,7 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(partialspath);
 
 app.get('', (req, res) => {
-  res.render('index', { title: 'Weather', name: 'Angel' });
+  res.render('index', { title: 'Weather', name: 'rakesh-101297' });
 });
 
 app.get('/about', (req, res) => {
@@ -27,7 +27,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help',
-    name: 'Angel',
+    name: 'rakesh-101297',
     helpText: 'How can i help u!!',
   });
 });
@@ -72,11 +72,19 @@ app.get('/weather', (req, res) => {
 });
 
 app.get('/help/*', (req, res) => {
-  res.render('404', { title: '404', name: 'Angel', errormsg: 'my help error' });
+  res.render('404', {
+    title: '404',
+    name: 'rakesh-101297',
+    errormsg: 'my help error',
+  });
 });
 
 app.get('*', (req, res) => {
-  res.render('404', { title: '404', name: 'Angel', errormsg: 'my 404 error' });
+  res.render('404', {
+    title: '404',
+    name: 'rakesh-101297',
+    errormsg: 'my 404 error',
+  });
 });
 
 app.listen(port, () => {
