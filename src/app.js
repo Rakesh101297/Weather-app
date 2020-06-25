@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const port = process.env.PORT || 3000;
 const hbs = require('hbs');
 const request = require('request');
 const geocode = require('./utils/geocode');
@@ -78,6 +79,6 @@ app.get('*', (req, res) => {
   res.render('404', { title: '404', name: 'Angel', errormsg: 'my 404 error' });
 });
 
-app.listen('3000', () => {
-  console.log('Web server started');
+app.listen(port, () => {
+  console.log('Web server started' + port);
 });
