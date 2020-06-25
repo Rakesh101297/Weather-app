@@ -12,11 +12,12 @@ const forecast = (latitude, longitude, callback) => {
     if (error) {
       callback('error', undefined);
     } else if (body.error) {
-      console.log(body.error.info, undefined);
+      callback(body.error.info, undefined);
     } else {
       callback(
         undefined,
-        `${body.current.weather_descriptions[0]} it is currently ${body.current.temperature} degrees out.  it feels like ${body.current.feelslike} degrees out`
+        `${body.current.weather_descriptions[0]} it is currently ${body.current.temperature} degrees.
+        It feels like ${body.current.feelslike} degrees out. Humidity is ${body.current.humidity} and Pressure is ${body.current.pressure}`
       );
     }
   });

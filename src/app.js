@@ -21,7 +21,7 @@ app.get('', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.render('about', { title: 'About Me', name: 'Angel' });
+  res.render('about', { title: 'About Me', name: 'rakesh-101297' });
 });
 
 app.get('/help', (req, res) => {
@@ -45,7 +45,7 @@ app.get('/products', (req, res) => {
 app.get('/weather', (req, res) => {
   if (!req.query.address) {
     return res.send({
-      error: 'you must specify address',
+      error: 'You must specify address',
     });
   }
 
@@ -88,5 +88,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('Web server started' + port);
+  console.log('Web server started ' + port);
 });
